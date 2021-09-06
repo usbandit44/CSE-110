@@ -2,7 +2,7 @@
 // Assignment1.java
 // Arvin Edouard
 // Helps a person decide if they are going to buy a car by calculating the total cost of owning that car after five years
-//
+// 45 minutes
 // September 8, 2021
 
 import java.util.Scanner; // allows the scanner class to be used
