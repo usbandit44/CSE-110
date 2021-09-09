@@ -1,9 +1,9 @@
-// Arvin Edouard
-// Assignment1.java
-// Arvin Edouard
-// Helps a person decide if they are going to buy a car by calculating the total cost of owning that car after five years
-// 45 minutes
-// September 8, 2021
+// Name: Arvin Edouard
+// Title: Assignment1.java
+// Author: Arvin Edouard
+// Discription: Helps a person decide if they are going to buy a car by calculating the total cost of owning that car after five years
+// Time spent: 45 minutes
+// Date: September 8, 2021
 /* Answers to part A
 //a 6: it prints a as 6 then then sets it as 7 for the following line
 //b 7: since the previous line set a as 7 it will print 7 then set a back to 6
