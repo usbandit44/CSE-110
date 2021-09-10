@@ -26,14 +26,12 @@ public class Lab2
         nameLength = fullName.length();// declares the name length
         System.out.println("The length of the full name is: " + nameLength);// prints name length
 
-        String title1 = "cse110";
+        String title1 = new String("cse110");
         String title2 = "cse110";
         if ( title1 == title2 )
         {
             System.out.println("String comparison using \"==\" sign works");
-        }
-        else
-        {
+        }else{
             System.out.println("String comparison using \"==\" sign does NOT works");
         }
         if ( title1.equals(title2) )
