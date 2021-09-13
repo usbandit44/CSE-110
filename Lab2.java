@@ -43,6 +43,8 @@ public class Lab2
             System.out.println("String comparison using \"equals\" method does not works");
         }
 
+        
+        
 
     }
 }
