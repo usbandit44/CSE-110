@@ -1,3 +1,8 @@
+// Arvin Edouard
+// Lab3.java
+// This program gathers 3 grade scores within a certain peramiter and calculates the weighted total grade. Based on the weighted total the programs tell you if you pass of fail the class
+// CSE 110- Lab 3
+// 1 hour
 import java.util.Scanner;
 
 public class Lab3 
