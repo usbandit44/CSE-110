@@ -1,3 +1,8 @@
+// Arvin Edouard
+// Assignment2.java
+// The program takes and reads two strings and prefroms multiple task with them
+// 3:35 Monday september 13, 2021
+// 1 hour
 /* Answers to part 1
 1
 a:System.out.println(myString.length());
@@ -55,16 +60,16 @@ public class Assignment2
         System.out.println("The second string is lexically larger");
     }else if(x > 0){
         System.out.println("The first string is lexicallt larger");
-    }
+    } // Lines 50 through 63 check if the strings are lexically simular and if not which one is longer. It then prints a statment about the comparisison 
 
     String firstLetterS1 = string1.substring(0, 1);
     String secondLetterS1 = string2.substring(0, 1); // declares the first letter of each string
     System.out.println("The first character of the first string is" + " " + firstLetterS1.toUpperCase());
-    System.out.println("The first character of the second string is" + " " + secondLetterS1.toUpperCase()); // primts the first letter in uppercase
+    System.out.println("The first character of the second string is" + " " + secondLetterS1.toUpperCase()); // prints the first letter in uppercase
 
     System.out.println("The concatenation of two string is" + " " + string2.toUpperCase() + string1.toUpperCase());
     System.out.println("The first string using lower case letters: " + string1.toLowerCase());
-    System.out.println("The secaond string using lower case letters: " + string2.toLowerCase());
+    System.out.println("The secaond string using lower case letters: " + string2.toLowerCase()); // adds the strings together and putes the letters in uppercase
 
 
 
