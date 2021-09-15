@@ -3,8 +3,10 @@
 a:System.out.println(myString.length());
 b:System.out.println(myString.charAt(12));
 c:System.out.println(myString.indexOf("Kansas"));
-d:System.out.println("waiting for help");
-e:System.out.println(myString.substring(7, 21));
+d:
+int y = myString.indexOf(" ");
+System.out.println(myString.substring(y + 1).indexOf(" ") + y);
+e:System.out.println(myString.substring(6, 20));
 2
 a: true- 3 is equal to 6/2 so it print
 b: true- 1 is not equal to 0 so the first part is true. || only requires one part of the statment to be true to print true
@@ -45,7 +47,15 @@ public class Assignment2
       }else{
           System.out.println("The two strings are different");
       }
-      // what does lexically mean
+    int x = string1.compareTo(string2);
+    
+    if(x == 0){
+        System.out.println("The strings are lexically the same");
+    }else if(x < 0){
+        System.out.println("The second string is lexically larger");
+    }else if(x > 0){
+        System.out.println("The first string is lexicallt larger");
+    }
 
     String firstLetterS1 = string1.substring(0, 1);
     String secondLetterS1 = string2.substring(0, 1); // declares the first letter of each string
