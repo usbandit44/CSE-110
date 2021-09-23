@@ -9,6 +9,7 @@ public class Assignment3 {
        String lName;
        Scanner in = new Scanner(System.in);
 
+       System.out.println("Welcome to CSE 110 bank");
        System.out.print("What is your first name? ");
        fName = in.next();
        System.out.print("What is your last name? ");
@@ -25,6 +26,12 @@ public class Assignment3 {
 
        if(initialTotal > 5000){
            System.out.println(userName + "'s Platinum Account balance: " + fmt.format(initialTotal) + "(S: $" + fmt.format(initialSaving) + ", C: $" + fmt.format(initialChecking) + ")");
+           System.out.println("Bank Options:\n1. Deposit Money\n2. Withdraw Money\n3. Transfer money\n4. Quit");
+           System.out.print("Your Choice: ");
+           i = in.nextInt();
+           if(i == 1){
+               
+           }
 
        }
 
