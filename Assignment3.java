@@ -1,3 +1,9 @@
+// Arvin Edouard
+// Assignment3.java
+// A simulated bank that after getting the users name savings and checkings they will beable to deposit withdraw and transfer money. They will get put into a cretain type of account based on their funds and will recieve a certain amount of interest after every transaction based in what account they have.
+// Lab 3:35 Monday, 2021
+// 3 hours
+
 import java.util.Scanner; // imports scanner class
 import java.text.NumberFormat; // imports formater class
 
@@ -25,13 +31,13 @@ public class Assignment3 {
        double basicInterest = .025;
        String userName = fName + " " + lName;
        NumberFormat fmt = NumberFormat.getCurrencyInstance();
-       int bankOption = 0; // the counter for the first set of choices
+       int bankOption = 0;
        int choice = 0;
        double depositAmount = 0;
        double withdrawAmount = 0;
-       double transferAmount = 0;
+       double transferAmount = 0; // creates variables for otption chocies and calcuations
 
-       if(total > 5000){// decides what account they have
+       if(total > 5000){// platuim account
            System.out.println(userName + "'s Platinum Account balance: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C: " + fmt.format(checking) + ")");
            System.out.println("Bank Options:\n1. Deposit Money\n2. Withdraw Money\n3. Transfer Money\n4. Quit"); // creates the account and provides the user witht eh options
            System.out.print("Your Choice: ");
@@ -43,7 +49,7 @@ public class Assignment3 {
                     System.out.print("Your Choice: ");
                     choice = in.nextInt();
                     switch(choice){
-                        case 1:// deposit
+                        case 1:// deposit to checking
                             System.out.print("Amount to deposit to Checking: ");
                             depositAmount = in.nextDouble();
                             checking = checking + depositAmount;
@@ -54,7 +60,7 @@ public class Assignment3 {
                             System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                             System.out.println("We have added interest to your account! (S: " + fmt.format(platiumSavingInterest1) + ", C: " + fmt.format(platiumCheckingInterest1) + ")");
                             break;
-                        case 2:
+                        case 2: // deposit to savings
                             System.out.print("Amount to deposit to Saving: ");
                             depositAmount = in.nextDouble();
                             saving = saving + depositAmount;
@@ -65,7 +71,7 @@ public class Assignment3 {
                             System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                             System.out.println("We have added interest to your account! (S: " + fmt.format(platiumSavingInterest2) + ", C: " + fmt.format(platiumCheckingInterest2) + ")");
                             break;
-                        case 3:
+                        case 3: // cancel
                             double platiumSavingInterest3 = saving * platiumInterest + saving;
                             double platiumCheckingInterest3 = checking * platiumInterest + checking;
                             System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
@@ -88,7 +94,7 @@ public class Assignment3 {
                             System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                             System.out.println("We have added interest to your account! (S: " + fmt.format(platiumSavingInterest1) + ", C: " + fmt.format(platiumCheckingInterest1) + ")");
                             break;
-                        case 2:
+                        case 2: // withdraw from savings
                             System.out.print("Amount to withdraw to Saving: ");
                             withdrawAmount = in.nextDouble();
                             saving = saving - withdrawAmount;
@@ -99,19 +105,19 @@ public class Assignment3 {
                             System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                             System.out.println("We have added interest to your account! (S: " + fmt.format(platiumSavingInterest2) + ", C: " + fmt.format(platiumCheckingInterest2) + ")");
                             break;
-                        case 3:
+                        case 3: // cancel
                             double platiumSavingInterest3 = saving * platiumInterest + saving;
                             double platiumCheckingInterest3 = checking * platiumInterest + checking;
                             System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                             System.out.println("We have added interest to your account! (S: " + fmt.format(platiumSavingInterest3) + ", C: " + fmt.format(platiumCheckingInterest3) + ")");
                             break;
                     }break;
-                case 3:
+                case 3: // transfer
                     System.out.println("Transfer Money Option:\n1. Transfer from Checking to Savings\n2. Transfer from Savings to Checkings\n3. Cancel");
                     System.out.print("Your Choice: ");
                     choice = in.nextInt();
                     switch(choice){
-                         case 1:
+                         case 1: // transfer from checking to saving
                             System.out.print("Amount to transfer from Checking to Savings: ");
                             transferAmount = in.nextDouble();
                             checking = checking - transferAmount;
@@ -123,7 +129,7 @@ public class Assignment3 {
                             System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                             System.out.println("We have added interest to your account! (S: " + fmt.format(platiumSavingInterest1) + ", C: " + fmt.format(platiumCheckingInterest1) + ")");
                             break;
-                        case 2:
+                        case 2: // transfer from saving to checking
                             System.out.print("Amount to transfer from Savings to Checkings: ");
                             transferAmount = in.nextDouble();
                             checking = checking + transferAmount;
@@ -135,7 +141,7 @@ public class Assignment3 {
                             System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                             System.out.println("We have added interest to your account! (S: " + fmt.format(platiumSavingInterest2) + ", C: " + fmt.format(platiumCheckingInterest2) + ")");
                             break;
-                        case 3:
+                        case 3: // cancel
                             System.out.println("Transfer Canceled");
                             double platiumSavingInterest3 = saving * platiumInterest + saving;
                             double platiumCheckingInterest3 = checking * platiumInterest + checking;
@@ -143,14 +149,14 @@ public class Assignment3 {
                             System.out.println("We have added interest to your account! (S: " + fmt.format(platiumSavingInterest3) + ", C: " + fmt.format(platiumCheckingInterest3) + ")");
                             break;
                     }break;
-                case 4:
+                case 4: // quit
                     System.out.println("Bye");
                     break;
 
 
                 }
 
-            }else if(total >= 1000 && total <= 5000){
+            }else if(total >= 1000 && total <= 5000){ // premium account
                 System.out.println(userName + "'s Premium Account balance: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C: " + fmt.format(checking) + ")");
                 System.out.println("Bank Options:\n1. Deposit Money\n2. Withdraw Money\n3. Transfer Money\n4. Quit"); // creates the account and provides the user witht eh options
                 System.out.print("Your Choice: ");
@@ -162,7 +168,7 @@ public class Assignment3 {
                         System.out.print("Your Choice: ");
                         choice = in.nextInt();
                         switch(choice){
-                            case 1:// deposit
+                            case 1:// deposit tp checking
                                 System.out.print("Amount to deposit to Checking: ");
                                 depositAmount = in.nextDouble();
                                 checking = checking + depositAmount;
@@ -173,7 +179,7 @@ public class Assignment3 {
                                 System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                                 System.out.println("We have added interest to your account! (S: " + fmt.format(premiumSavingInterest1) + ", C: " + fmt.format(premiumCheckingInterest1) + ")");
                                 break;
-                            case 2:
+                            case 2: // deposit to saving
                                 System.out.print("Amount to deposit to Saving: ");
                                 depositAmount = in.nextDouble();
                                 saving = saving + depositAmount;
@@ -184,7 +190,7 @@ public class Assignment3 {
                                 System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                                 System.out.println("We have added interest to your account! (S: " + fmt.format(premiumSavingInterest2) + ", C: " + fmt.format(premiumCheckingInterest2) + ")");
                                 break;
-                            case 3:
+                            case 3: // cancel
                                 double premiumSavingInterest3 = saving * premiumInterest + saving;
                                 double premiumCheckingInterest3 = checking * premiumInterest + checking;
                                 System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
@@ -208,7 +214,7 @@ public class Assignment3 {
                                 System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                                 System.out.println("We have added interest to your account! (S: " + fmt.format(premiumSavingInterest1) + ", C: " + fmt.format(premiumCheckingInterest1) + ")");
                                 break;
-                            case 2:
+                            case 2: // withdraw from saving
                                 System.out.print("Amount to withdraw to Saving: ");
                                 withdrawAmount = in.nextDouble();
                                 saving = saving - withdrawAmount;
@@ -219,19 +225,19 @@ public class Assignment3 {
                                 System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                                 System.out.println("We have added interest to your account! (S: " + fmt.format(premiumSavingInterest2) + ", C: " + fmt.format(premiumCheckingInterest2) + ")");
                                 break;
-                            case 3:
+                            case 3: // cancel
                                 double premiumSavingInterest3 = saving * premiumInterest + saving;
                                 double premiumCheckingInterest3 = checking * premiumInterest + checking;
                                 System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                                 System.out.println("We have added interest to your account! (S: " + fmt.format(premiumSavingInterest3) + ", C: " + fmt.format(premiumCheckingInterest3) + ")");
                                 break;
                         }break;
-                    case 3:
+                    case 3: // transfer
                         System.out.println("Transfer Money Option:\n1. Transfer from Checking to Savings\n2. Transfer from Savings to Checkings\n3. Cancel");
                         System.out.print("Your Choice: ");
                         choice = in.nextInt();
                         switch(choice){
-                            case 1:
+                            case 1: // transfer from checking to saving
                                 System.out.print("Amount to transfer from Checking to Savings: ");
                                 transferAmount = in.nextDouble();
                                 checking = checking - transferAmount;
@@ -243,7 +249,7 @@ public class Assignment3 {
                                 System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                                 System.out.println("We have added interest to your account! (S: " + fmt.format(premiumSavingInterest1) + ", C: " + fmt.format(premiumCheckingInterest1) + ")");
                                 break;
-                            case 2:
+                            case 2: // transfer from saving to checking
                                 System.out.print("Amount to transfer from Savings to Checkings: ");
                                 transferAmount = in.nextDouble();
                                 checking = checking + transferAmount;
@@ -255,7 +261,7 @@ public class Assignment3 {
                                 System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                                 System.out.println("We have added interest to your account! (S: " + fmt.format(premiumSavingInterest2) + ", C: " + fmt.format(premiumCheckingInterest2) + ")");
                                 break;
-                            case 3:
+                            case 3: // cancel
                                 System.out.println("Transfer Canceled");
                                 double premiumSavingInterest3 = saving * premiumInterest + saving;
                                 double premiumCheckingInterest3 = checking * premiumInterest + checking;
@@ -263,12 +269,12 @@ public class Assignment3 {
                                 System.out.println("We have added interest to your account! (S: " + fmt.format(premiumSavingInterest3) + ", C: " + fmt.format(premiumCheckingInterest3) + ")");
                                 break;
                         }break;
-                    case 4:
+                    case 4: // quit
                         System.out.println("Bye");
                         break;
             }
 
-       }else if(total >= 0 && total < 1000){
+       }else if(total >= 0 && total < 1000){ // basic account
             System.out.println(userName + "'s Basic Account balance: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C: " + fmt.format(checking) + ")");
             System.out.println("Bank Options:\n1. Deposit Money\n2. Withdraw Money\n3. Transfer Money\n4. Quit"); // creates the account and provides the user witht eh options
             System.out.print("Your Choice: ");
@@ -280,7 +286,7 @@ public class Assignment3 {
                 System.out.print("Your Choice: ");
                 choice = in.nextInt();
                 switch(choice){
-                    case 1:// deposit
+                    case 1:// deposit to checking
                         System.out.print("Amount to deposit to Checking: ");
                         depositAmount = in.nextDouble();
                         checking = checking + depositAmount;
@@ -291,7 +297,7 @@ public class Assignment3 {
                         System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                         System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest1) + ", C: " + fmt.format(basicCheckingInterest1) + ")");
                         break;
-                    case 2:
+                    case 2: // deposit to saving
                         System.out.print("Amount to deposit to Saving: ");
                         depositAmount = in.nextDouble();
                         saving = saving + depositAmount;
@@ -302,7 +308,7 @@ public class Assignment3 {
                         System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                         System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest2) + ", C: " + fmt.format(basicCheckingInterest2) + ")");
                         break;
-                    case 3:
+                    case 3: // cancel
                         double basicSavingInterest3 = saving * basicInterest + saving;
                         double basicCheckingInterest3 = checking * basicInterest + checking;
                         System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
@@ -326,7 +332,7 @@ public class Assignment3 {
                         System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                         System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest1) + ", C: " + fmt.format(basicCheckingInterest1) + ")");
                         break;
-                    case 2:
+                    case 2: //withdraw from saving
                         System.out.print("Amount to withdraw to Saving: ");
                         withdrawAmount = in.nextDouble();
                         saving = saving - withdrawAmount;
@@ -337,19 +343,19 @@ public class Assignment3 {
                         System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                         System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest2) + ", C: " + fmt.format(basicCheckingInterest2) + ")");
                         break;
-                    case 3:
+                    case 3: // cancel
                         double basicSavingInterest3 = saving * basicInterest + saving;
                         double basicCheckingInterest3 = checking * basicInterest + checking;
                         System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                         System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest3) + ", C: " + fmt.format(basicCheckingInterest3) + ")");
                         break;
                 }break;
-            case 3:
+            case 3: // transfer
                 System.out.println("Transfer Money Option:\n1. Transfer from Checking to Savings\n2. Transfer from Savings to Checkings\n3. Cancel");
                 System.out.print("Your Choice: ");
                 choice = in.nextInt();
                 switch(choice){
-                    case 1:
+                    case 1: // transfer from checking to saving
                         System.out.print("Amount to transfer from Checking to Savings: ");
                         transferAmount = in.nextDouble();
                         checking = checking - transferAmount;
@@ -361,7 +367,7 @@ public class Assignment3 {
                         System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                         System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest1) + ", C: " + fmt.format(basicCheckingInterest1) + ")");
                         break;
-                    case 2:
+                    case 2: // transfer from saving to checking
                         System.out.print("Amount to transfer from Savings to Checkings: ");
                         transferAmount = in.nextDouble();
                         checking = checking + transferAmount;
@@ -373,7 +379,7 @@ public class Assignment3 {
                         System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
                         System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest2) + ", C: " + fmt.format(basicCheckingInterest2) + ")");
                         break;
-                    case 3:
+                    case 3: // cancel
                         System.out.println("Transfer Canceled");
                         double basicSavingInterest3 = saving * basicInterest + saving;
                         double basicCheckingInterest3 = checking * basicInterest + checking;
@@ -381,7 +387,7 @@ public class Assignment3 {
                         System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest3) + ", C: " + fmt.format(basicCheckingInterest3) + ")");
                         break;
                 }break;
-            case 4:
+            case 4: // quit
                 System.out.println("Bye");
                 break;
             
