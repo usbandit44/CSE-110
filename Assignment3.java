@@ -22,6 +22,7 @@ public class Assignment3 {
        double total = checking + saving;
        double platiumInterest = .045;
        double premiumInterest = .035;
+       double basicInterest = .025;
        String userName = fName + " " + lName;
        NumberFormat fmt = NumberFormat.getCurrencyInstance();
        int bankOption = 0; // the counter for the first set of choices
@@ -267,7 +268,127 @@ public class Assignment3 {
                         break;
             }
 
-       }
+       }else if(total >= 0 && total < 1000){
+            System.out.println(userName + "'s Basic Account balance: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C: " + fmt.format(checking) + ")");
+            System.out.println("Bank Options:\n1. Deposit Money\n2. Withdraw Money\n3. Transfer Money\n4. Quit"); // creates the account and provides the user witht eh options
+            System.out.print("Your Choice: ");
+            bankOption = in.nextInt(); // has the user select their choice
+    
+        switch(bankOption){
+            case 1:// deposit
+                System.out.println("Deposit Money Options:\n1. Deposit to Checking\n2. Deposit to Savings\n3. Cancel");
+                System.out.print("Your Choice: ");
+                choice = in.nextInt();
+                switch(choice){
+                    case 1:// deposit
+                        System.out.print("Amount to deposit to Checking: ");
+                        depositAmount = in.nextDouble();
+                        checking = checking + depositAmount;
+                        total = checking + saving;
+                        double basicSavingInterest1 = saving * basicInterest + saving;
+                        double basicCheckingInterest1 = checking * basicInterest + checking;
+                        System.out.println("You deposited " + fmt.format(depositAmount) + " into Checkings");
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest1) + ", C: " + fmt.format(basicCheckingInterest1) + ")");
+                        break;
+                    case 2:
+                        System.out.print("Amount to deposit to Saving: ");
+                        depositAmount = in.nextDouble();
+                        saving = saving + depositAmount;
+                        total = checking + saving;
+                        double basicSavingInterest2 = saving * basicInterest + saving;
+                        double basicCheckingInterest2 = checking * basicInterest + checking;
+                        System.out.println("You deposited " + fmt.format(depositAmount) + " into Savings");
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest2) + ", C: " + fmt.format(basicCheckingInterest2) + ")");
+                        break;
+                    case 3:
+                        double basicSavingInterest3 = saving * basicInterest + saving;
+                        double basicCheckingInterest3 = checking * basicInterest + checking;
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest3) + ", C: " + fmt.format(basicCheckingInterest3) + ")");
+                        break;
+        
+            }break;
+            case 2:// withdraw option
+                System.out.println("Withdraw Money Options:\n1. Withdraw from Checkings\n2. Withdraw from Savings\n3. Cancel");
+                System.out.print("Your Choice: ");
+                choice = in.nextInt();
+                switch(choice){
+                    case 1: // withdraw from checking
+                        System.out.print("Amount to withdraw to Checking: ");
+                        withdrawAmount = in.nextDouble();
+                        checking = checking - withdrawAmount;
+                        total = checking + saving;
+                        double basicSavingInterest1 = saving * basicInterest + saving;
+                        double basicCheckingInterest1 = checking * basicInterest + checking;
+                        System.out.println("You withdrew " + fmt.format(depositAmount) + " from Checkings");
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest1) + ", C: " + fmt.format(basicCheckingInterest1) + ")");
+                        break;
+                    case 2:
+                        System.out.print("Amount to withdraw to Saving: ");
+                        withdrawAmount = in.nextDouble();
+                        saving = saving - withdrawAmount;
+                        total = checking + saving;
+                        double basicSavingInterest2 = saving * basicInterest + saving;
+                        double basicCheckingInterest2 = checking * basicInterest + checking;
+                        System.out.println("You withdrew " + fmt.format(depositAmount) + " from Savings");
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest2) + ", C: " + fmt.format(basicCheckingInterest2) + ")");
+                        break;
+                    case 3:
+                        double basicSavingInterest3 = saving * basicInterest + saving;
+                        double basicCheckingInterest3 = checking * basicInterest + checking;
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest3) + ", C: " + fmt.format(basicCheckingInterest3) + ")");
+                        break;
+                }break;
+            case 3:
+                System.out.println("Transfer Money Option:\n1. Transfer from Checking to Savings\n2. Transfer from Savings to Checkings\n3. Cancel");
+                System.out.print("Your Choice: ");
+                choice = in.nextInt();
+                switch(choice){
+                    case 1:
+                        System.out.print("Amount to transfer from Checking to Savings: ");
+                        transferAmount = in.nextDouble();
+                        checking = checking - transferAmount;
+                        saving = saving + transferAmount;
+                        total = saving + checking;
+                        System.out.println("You transfered " + fmt.format(transferAmount) + " from checking to saving");
+                        double basicSavingInterest1 = saving * basicInterest + saving;
+                        double basicCheckingInterest1 = checking * basicInterest + checking;
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest1) + ", C: " + fmt.format(basicCheckingInterest1) + ")");
+                        break;
+                    case 2:
+                        System.out.print("Amount to transfer from Savings to Checkings: ");
+                        transferAmount = in.nextDouble();
+                        checking = checking + transferAmount;
+                        saving = saving - transferAmount;
+                        total = saving + checking;
+                        System.out.println("You transfered " + fmt.format(transferAmount) + " from savings to checkings");
+                        double basicSavingInterest2 = saving * basicInterest + saving;
+                        double basicCheckingInterest2 = checking * basicInterest + checking;
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest2) + ", C: " + fmt.format(basicCheckingInterest2) + ")");
+                        break;
+                    case 3:
+                        System.out.println("Transfer Canceled");
+                        double basicSavingInterest3 = saving * basicInterest + saving;
+                        double basicCheckingInterest3 = checking * basicInterest + checking;
+                        System.out.println("After this transaction your balance is: " + fmt.format(total) + "(S: " + fmt.format(saving) + ", C:" + fmt.format(checking) + ")");
+                        System.out.println("We have added interest to your account! (S: " + fmt.format(basicSavingInterest3) + ", C: " + fmt.format(basicCheckingInterest3) + ")");
+                        break;
+                }break;
+            case 4:
+                System.out.println("Bye");
+                break;
+            
 
+        }
     }
-}  
+}
+}
+
+
