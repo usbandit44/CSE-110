@@ -11,15 +11,13 @@ public class Assignment3 {
     public static void main(String[] args){
        double checking;
        double saving;
-       String fName;
-       String lName;
+       String userName;
        Scanner in = new Scanner(System.in); // initializing variables
 
        System.out.println("Welcome to CSE 110 bank");
-       System.out.print("What is your first name? ");
-       fName = in.next();
-       System.out.print("What is your last name? ");
-       lName = in.next();
+       System.out.print("What is your name? ");
+       userName = in.next();
+       userName+=in.next();
        System.out.print("Initial deposit into savings: ");
        saving = in.nextDouble();
        System.out.print("Initial deposit into checkings: ");
@@ -29,7 +27,6 @@ public class Assignment3 {
        double platiumInterest = .045;
        double premiumInterest = .035;
        double basicInterest = .025;
-       String userName = fName + " " + lName;
        NumberFormat fmt = NumberFormat.getCurrencyInstance();
        int bankOption = 0;
        int choice = 0;
