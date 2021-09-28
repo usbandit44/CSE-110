@@ -1,9 +1,9 @@
 /*-------------------------------------------------------------
-// AUTHOR: 
-// FILENAME:
-// SPECIFICATION:
-// FOR:
-// TIME SPENT:
+// AUTHOR: Arvin Edouard
+// FILENAME: Lab5.java
+// SPECIFICATION: Creates pyramids and rowws based off specication inputed by the user
+// FOR: CSE 110- Lab 5
+// TIME SPENT: 1 Hour
 //-----------------------------------------------------------*/
 
 import java.util.Scanner;
@@ -136,7 +136,8 @@ public class Lab5 {
 
         String result = "";
         int sideWidth = -1, midWidth = -1;
-        
+        String side = "";
+        String middle = "";
         // YOUR CODE HERE
         if (numSymbols == 0){
             return result;
@@ -159,10 +160,10 @@ public class Lab5 {
             String newMiddle = "";
             midWidth = 1 + (2 * i);
             sideWidth = (numSymbols - midWidth)/2;
-            for (int z = 0; z < sideWidth; i++){
+            for (int z = 0; z < sideWidth; z++){
                 newSide = newSide + sideSymb;
             }
-            for(int z = 0; z < midWidth; i++){
+            for(int z = 0; z < midWidth; z++){
                 newMiddle = newMiddle + midSymb;
             }
             result = result + newSide + newMiddle + newSide + "\n";
