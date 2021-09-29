@@ -155,7 +155,7 @@ public class Lab5 {
         // -->
         int rows = numSymbols/2 + 1;
         // Make a loop to iterate the pyramid's levels
-        for (int i = 0; i < rows + 1; i++) {
+        for (int i = 0; i < rows; i++) {
             String newSide = "";
             String newMiddle = "";
             midWidth = 1 + (2 * i);
