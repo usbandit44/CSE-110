@@ -45,7 +45,7 @@ public class Assignment4 {
                             z++;
                             match = false;
                         }
-                    }while(match = false);
+                    }while(match);
                     
                     
                     }
