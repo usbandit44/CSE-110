@@ -1,4 +1,24 @@
-/* A.
+// AUTHOR: Arvin Edouard
+// FILENAME: Assignment4.java
+// SPECIFICATION: completes certain task based off user selection and input
+// FOR: CSE 110- Monday, Wednesday, and Friday 2:30-3:20
+// TIME SPENT: 2 hours
+/* A. 7 4 - since the loop increases n twice n goes from 0 to 2 to 4 the stops the loop. 0 plus 1 is 1, 1 plus 2 is 3, and finally 3 plus 4 is 7 stoping the loop making s 7
+// B. Value of i is: 3 - The loop starts by dividing y by 2 making the new y .5 then adds .5 to x making the new x 1.5 and increases i to 1 since 1.5 isnt greater than 1.8 the loop repeats. Y becomes .25 x become 1.75 and i becomes 3. Y becomes .125 and x becomes 1.875 and i becomes 3. Since x is now larger than 1.8 the loop ends and i which is 3 is printed
+// C.   ===== - The loop start at 0 and increases by 1 until i isn't less than 10. It will divide i by 2 and if the remainder is 0 it will print strips else it will print stars. so it prints stripes, stars, stripes, stars, stripes, stars, stripes, stars, stripes, stars, then stops because i isn't less than 10 anymore
+        *****
+        =====
+        *****
+        =====
+        *****
+        =====
+        *****
+        =====
+        *****
+    D. **** - In the loop i starts out as 0 and it will print the substring of plus from 0 to i and the substring of stars from i to 4 then creates a new line and i increases by one after every loop. so the loop prints 0 pluses and 4 stars creates a new line, 1 plus and 3 stars creates a new line, 2 pluses and 2 stars creates a new line, and 3 pluses and 1 star creates a new line. The loop then stops because i is no longer less than 4
+       +***
+       ++**
+       +++*
 */
 import java.util.Scanner;
 
@@ -26,30 +46,34 @@ public class Assignment4 {
                 }
                 break;
             case 'b':
-                int matches = 0;
                 String string1;
                 String string2;
                 System.out.print("Enter first string ");
                 string1 = in.next();
                 System.out.print("Enter second string ");
                 string2 = in.next();
-                for(int i = 0; i > string1.length(); i++){
+                int matches = 0;
+                for(int i = 0; i < string1.length(); i++){
                     int z = 0;
                     Boolean match = false;
                     do{
                         if(string1.charAt(i) == string2.charAt(z)){
                             matches++;
                             match = true;
-                            
-                        }else if(string1.charAt(i) != string2.charAt(z)){
-                            z++;
-                            match = false;
+                        }else {
+                          if(z < string2.length() - 1){
+                              z++;
+                          }else{
+                            match = true;
                         }
-                    }while(match);
-                    
-                    
+                        }
+                    }while(!match);
                     }
-                System.out.println(matches);
+                if(matches == string1.length()){
+                    System.out.println("String 2 overlaps with string 1");
+                }else{
+                    System.out.println("String 2 doesn’t overlap with string 1");
+                }
                 break;
             case 'c':
                 String reverseString = "";
