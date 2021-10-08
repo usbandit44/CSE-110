@@ -114,6 +114,10 @@ public class Assignment4 {
                     }
                     System.out.println("The number of digits is " + (count2 + 1)); // prints number of digits
                     break;
+                case 'q':
+                    System.out.println("Bye");
+                default:
+                    System.out.println("Invalid entery please try again");
             }
         }
 
