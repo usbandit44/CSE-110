@@ -28,7 +28,7 @@ public class Assignment4 {
         Scanner in = new Scanner(System.in);
         
         while(option != 'q'){
-            System.out.println("Commad Options\na: Is it odd\nb: Overlapping strings\nc: Reverse the string\nd: Sum between two integers\ne: Number of digits\nq: Quit");
+            System.out.println("\nCommad Options\na: Is it odd\nb: Overlapping strings\nc: Reverse the string\nd: Sum between two integers\ne: Number of digits\nq: Quit");
             option = in.next().charAt(0); // creates the menu
             switch(option){
                 case 'a':// option one 
