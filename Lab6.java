@@ -40,6 +40,7 @@ public class Lab6
         System.out.printf("The total after-tax price in AZ: %.2f\n", afterTaxAZ);
         System.out.printf("The total after-tax price in %s: %.2f\n", targetState, afterTaxTarget);
 
+
         /* Show whether you have a chance to save */
         if (diff > 0)
         {
