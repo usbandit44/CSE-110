@@ -41,7 +41,24 @@ public class Techie {
             num = num * i;
         }
         return num;
+
+    }public boolean isAlpha (char letter){
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        int match = 0;
+        for(int i = 0; i < alphabet.length(); i++){
+            if(letter == alphabet.charAt(i)){
+                match++;
+            }
+        }
+        if(match == 1){
+            return true;
+        }else{
+            return false;
+        }
+
     }
+
+
 
     public int smallest(int num1, int num2, int num3){
         int smallestNumber;

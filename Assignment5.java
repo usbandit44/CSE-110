@@ -56,7 +56,7 @@ public class Assignment5
 							  num = console.nextInt();
 							  System.out.println(num + "! is: " + myTechie.factorial(num));
 		                      break;
-		                 /*case 'f': //finds if it is alphabet
+		                case 'f': //finds if it is alphabet
 							  System.out.println("Enter a character: " );
 							  input = console.next();
 							  char letter = input.charAt(0);
@@ -65,7 +65,7 @@ public class Assignment5
 							  else
 							     System.out.println("It is NOT an alphabet");
 		                      break;
-*/
+
 		                 case 'g'://finds the smallest integer
 		                        System.out.println("Enter 3 integers: ");
 		                        int a = console.nextInt();
