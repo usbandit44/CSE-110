@@ -1,10 +1,10 @@
  /*-------------------------------------------------------------------------
-// AUTHOR: Faye Navabi
+// AUTHOR: Arvin Edouard
 // FILENAME: Assignment5.java
 // SPECIFICATION:  This program provides a menu and based on user input calls the method in class Geek
 // YOUR Lab Letter and Name of the TA for your Closed lab
-// FOR: CSE 110- homework #- days and time of your class
-// TIME SPENT: how long it took you to complete the assignment
+// FOR: CSE 110- Assignment 5 Monday Wedsnesday Friday 2:30 to 3:20
+// TIME SPENT: 1 hour
 //----------------------------------------------------------------------*/
 
 import java.util.*;

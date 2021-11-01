@@ -1,10 +1,10 @@
 
 /*-------------------------------------------------------------
-// AUTHOR: your name.
-// FILENAME: title of the source file.
-// SPECIFICATION: your own description of the program.
+// AUTHOR: Arvin Edouard
+// FILENAME: Lab7.java
+// SPECIFICATION: Takes information about students in groups and gives statitics 
 // FOR: CSE 110 - Lab #7
-// TIME SPENT: how long it took you to complete the assignment.
+// TIME SPENT: 30 minutes
 //-----------------------------------------------------------*/
 
 import java.util.Scanner;
