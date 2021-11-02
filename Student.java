@@ -1,8 +1,8 @@
 /*-------------------------------------------------------------
 //AUTHOR: Arvin Edouard
 //FILENAME: Student.java
-//SPECIFICATION: allows the user to update and get students name grade and id
-//FOR: CSE 110 - Lab #8
+//SPECIFICATION: allows the user to update and get students name grade and id and compare students
+//FOR: CSE 110 - Lab #9
 //TIME SPENT: 30 minutes
 //-----------------------------------------------------------*/
 
